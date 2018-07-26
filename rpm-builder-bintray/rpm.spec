@@ -1,18 +1,14 @@
-Name:		
-Version:	
-Release:	1%{?dist}
-Summary:	
+Name:		__NAME__
+Version:	__VERSION__
+Release:	__VERSION__
+Summary:	__DESC__
 
-Group:		
-License:	
-URL:		
-Source0:	
+License:	__LICENSE__
 
-BuildRequires:	
-Requires:	
+Requires:	python
 
 %description
-
+__DESC__
 
 %prep
 %setup -q
@@ -33,4 +29,5 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
-
+* Thu Jul 26 2018 zlig <email@example.com>
+- Initial build
