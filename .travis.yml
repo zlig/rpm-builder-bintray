@@ -38,18 +38,18 @@ script:
   # Create the RPM package
   - cat $PACKAGE_NAME/rpm.spec
   - cd $PACKAGE_NAME
-  - rpmbuild -v -bb --target x86_64 rpm.spec
+  - mkdir -p ./{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+  - cp -p -r sources/* BUILD
+  - rpmbuild -v -bb --target x86_64 --define "_topdir `pwd`" rpm.spec
   - cd ..
 
 after_success:
   # Output detail on the resulting package for debugging purpose
-  - pwd
-  - ls -laths .
-  - echo "BUILD DIR: $TRAVIS_BUILD_DIR"
-  - ls -laths $TRAVIS_BUILD_DIR
-  #- md5sum *
-  #- sha256sum *
-  #- export LOCAL_SHA256=$( sha256sum $PACKAGE_NAME_VERSION | cut -d " " -f1 )
+  - ls -laths $PACKAGE_NAME/RPMS
+  - md5sum $PACKAGE_NAME/RPMS/*
+  - sha256sum $PACKAGE_NAME/RPMS/*
+  - export LOCAL_SHA256=$( sha256sum $PACKAGE_NAME/RPMS/* | cut -d " " -f1 )
+  - cp $PACKAGE_NAME/RPMS/* .
 
 before_deploy:
   # Set the packages name and details in the descriptor file
