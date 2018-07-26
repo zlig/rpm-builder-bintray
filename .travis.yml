@@ -26,9 +26,9 @@ before_install:
   - export PACKAGE_NAME_VERSION=$PACKAGE_NAME-$BUILD_VERSION.rpm
 
 script:
-  # Replace version and build number with the Debian control file
-  - sed -i "s/__VERSION__/$BUILD_VERSION/g" $PACKAGE_NAME/DEBIAN/control
-  - sed -i "s/__DATE__/$BUILD_DATE/g" $PACKAGE_NAME/DEBIAN/control
+  # Replace version and build number with the RPM .spec file
+  - sed -i "s/__VERSION__/$BUILD_VERSION/g" $PACKAGE_NAME/*.spec
+  - sed -i "s/__DATE__/$BUILD_DATE/g" $PACKAGE_NAME/*.spec
   # Create the RPM package
   - cd $PACKAGE_NAME
   - rpmbuild -bb rpm.spec
