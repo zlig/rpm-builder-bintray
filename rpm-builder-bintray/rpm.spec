@@ -1,6 +1,6 @@
 Name:		__NAME__
-Version:	__VERSION__
-Release:	__VERSION__
+Version:	__SOFTWARE_VERSION__
+Release:	__RELEASE_VERSION__
 Summary:	__DESC__
 
 License:	__LICENSE__
