@@ -37,6 +37,7 @@ script:
   - sed -i "s/__DATE__/$BUILD_DATE/g" $PACKAGE_NAME/*.spec
   # Create the RPM package
   - cat $PACKAGE_NAME/rpm.spec
+  - cd $PACKAGE_NAME
   - rpmbuild -v -bb --target x86_64 $PACKAGE_NAME/rpm.spec
 
 after_success:
