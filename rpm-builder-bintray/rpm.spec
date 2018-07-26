@@ -11,20 +11,18 @@ Requires:	python
 __DESC__
 
 %prep
-%setup -q
 
 
 %build
-%configure
-make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot}
+ls -l %{buildroot}
 
 
 %files
 %doc
+hello.sh
 
 
 

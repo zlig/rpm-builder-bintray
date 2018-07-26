@@ -33,8 +33,7 @@ script:
   - sed -i "s/__DATE__/$BUILD_DATE/g" $PACKAGE_NAME/*.spec
   # Create the RPM package
   - cat $PACKAGE_NAME/rpm.spec
-  - cd $PACKAGE_NAME
-  - rpmbuild -bb rpm.spec
+  - rpmbuild -bb --target x86_64 --buildroot $PACKAGE_NAME $PACKAGE_NAME/rpm.spec
   - ls -laths .
 
 after_success:
