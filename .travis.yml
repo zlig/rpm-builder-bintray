@@ -43,7 +43,10 @@ script:
 
 after_success:
   # Output detail on the resulting package for debugging purpose
-  - ls -lathsR .
+  - pwd
+  - ls -laths .
+  - echo "BUILD DIR: $TRAVIS_BUILD_DIR"
+  - ls -laths $TRAVIS_BUILD_DIR
   #- md5sum *
   #- sha256sum *
   #- export LOCAL_SHA256=$( sha256sum $PACKAGE_NAME_VERSION | cut -d " " -f1 )
