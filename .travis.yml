@@ -42,8 +42,8 @@ script:
 after_success:
   # Output detail on the resulting package for debugging purpose
   - ls -laths .
-  - md5sum *
-  - sha256sum *
+  #- md5sum *
+  #- sha256sum *
   #- export LOCAL_SHA256=$( sha256sum $PACKAGE_NAME_VERSION | cut -d " " -f1 )
 
 before_deploy:
