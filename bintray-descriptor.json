@@ -7,7 +7,8 @@
 	
 	"version": {
 		"name": "__VERSION__",
-		"desc": "__NAME__ __VERSION__ by __SUBJECT__"
+		"desc": "__NAME__ __VERSION__ by __SUBJECT__",
+                "gpgSign": false
 	},
 
 	"licenses": ["__LICENSE__"],
@@ -17,12 +18,7 @@
 	"files": [
 		{
 			"includePattern": "./(.[^/]*(\\.rpm)$)",
-			"uploadPattern": "$1",
-			"matrixParams": {
-				"deb_distribution": "unstable",
-				"deb_component": "main",
-				"deb_architecture": "amd64"
-			}
+			"uploadPattern": "$1"
 		}
 	],
 
