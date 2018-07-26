@@ -13,6 +13,11 @@ env:
   - BINTRAY_REPO_NAME=rpm
   - BINTRAY_LICENSE=LGPL-2.1
 
+addons:
+  apt:
+    packages:
+    - rpm
+
 before_install:
   # Export variables containing versions and filename
   - export RELEASE_VERSION=$(cat VERSION)
@@ -24,8 +29,9 @@ script:
   # Replace version and build number with the Debian control file
   - sed -i "s/__VERSION__/$BUILD_VERSION/g" $PACKAGE_NAME/DEBIAN/control
   - sed -i "s/__DATE__/$BUILD_DATE/g" $PACKAGE_NAME/DEBIAN/control
-  # Create the Debian package
-  - rpmbuild -bb $PACKAGE_NAME
+  # Create the RPM package
+  - cd $PACKAGE_NAME
+  - rpmbuild -bb rpm.spec
   - mv $PACKAGE_NAME.rpm $PACKAGE_NAME_VERSION
 
 after_success:
