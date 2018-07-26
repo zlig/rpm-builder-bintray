@@ -32,6 +32,7 @@ script:
   - sed -i "s/__RELEASE_VERSION__/$RELEASE_VERSION/g" $PACKAGE_NAME/*.spec
   - sed -i "s/__DATE__/$BUILD_DATE/g" $PACKAGE_NAME/*.spec
   # Create the RPM package
+  - cat $PACKAGE_NAME/rpm.spec
   - cd $PACKAGE_NAME
   - rpmbuild -bb rpm.spec
   - ls -laths .
