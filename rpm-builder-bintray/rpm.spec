@@ -23,7 +23,6 @@ ls -l
 
 %files
 %doc
-/hello.sh
 
 
 

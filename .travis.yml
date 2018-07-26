@@ -38,7 +38,7 @@ script:
   # Create the RPM package
   - cat $PACKAGE_NAME/rpm.spec
   - cd $PACKAGE_NAME
-  - rpmbuild -v -bb --target x86_64 $PACKAGE_NAME/rpm.spec
+  - rpmbuild -v -bb --target x86_64 rpm.spec
 
 after_success:
   # Output detail on the resulting package for debugging purpose
