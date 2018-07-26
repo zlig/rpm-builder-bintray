@@ -17,7 +17,8 @@ __DESC__
 
 
 %install
-ls -l %{buildroot}
+echo "Hello"
+ls -l
 
 
 %files
