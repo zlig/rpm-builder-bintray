@@ -19,10 +19,7 @@ __DESC__
 %install
 
 echo "Laying out the package's files and directories.. "
-echo "-> "%{package_files}
-ls -ltha %{package_files}
-echo "-> "%{buildroot}
-ls -ltha %{buildroot}
+mkdir -p %{buildroot}
 cp -rf %{package_files}/* %{buildroot}
 
 
