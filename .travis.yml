@@ -45,6 +45,7 @@ script:
 
 after_success:
   # Output detail on the resulting package for debugging purpose
+  - rpm -qlpv $PACKAGE_NAME/RPMS/$TARGET_ARCH/$PACKAGE_NAME_VERSION
   - md5sum $PACKAGE_NAME/RPMS/$TARGET_ARCH/$PACKAGE_NAME_VERSION
   - sha256sum $PACKAGE_NAME/RPMS/$TARGET_ARCH/$PACKAGE_NAME_VERSION
   - export LOCAL_SHA256=$( sha256sum $PACKAGE_NAME/RPMS/$TARGET_ARCH/$PACKAGE_NAME_VERSION | cut -d " " -f1 )
