@@ -40,7 +40,7 @@ script:
   - cd $PACKAGE_NAME
   - mkdir -p ./{BUILD,RPMS,SOURCES,SPECS,SRPMS}
   - cp -p -r files/* BUILD
-  - rpmbuild -v -bb --target x86_64 --define "_topdir `pwd`" rpm.spec
+  - rpmbuild -v -bb --target noarch --define "_topdir `pwd`" rpm.spec
   - cd ..
 
 after_success:
