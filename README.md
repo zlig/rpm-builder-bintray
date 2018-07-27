@@ -6,10 +6,14 @@
 [![Build Status](https://travis-ci.org/zlig/rpm-builder-bintray.svg?branch=master)](https://travis-ci.org/zlig/rpm-builder-bintray)
 [![License](https://img.shields.io/badge/License-LGPL%202.1-blue.svg)](https://opensource.org/licenses/LGPL-2.1)
 
-## Description
+## Summary
 
 Builder tool to create Red Hat / CentOS .rpm packages (using Travis) and upload to Bintray
 
+## Description
+
+This package doesn't do anything, its only purpose is to build a RPM package using Travis CI, and then distribute it via Bintray,
+to allow installing on any server using a yum command.
 
 ## Instructions
 
