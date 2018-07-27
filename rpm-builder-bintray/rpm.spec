@@ -17,8 +17,9 @@ __DESC__
 
 
 %install
-echo "Hello"
-ls -l
+
+echo "Laying out the package's files and directories.. "
+cp -rf %{package_files}/* %{buildroot}
 
 
 %files
