@@ -2,7 +2,7 @@
 
 ## Status
 
-[![Download](https://bintray.com/zlig/rpm/rpm-builder-bintray/images/download.svg)](https://bintray.com/zlig/rpm/rpm-builder-bintray#files)
+[![Download](https://api.bintray.com/packages/zlig/rpm/rpm-builder-bintray/images/download.svg)](https://bintray.com/zlig/rpm/rpm-builder-bintray#files)
 [![Build Status](https://travis-ci.org/zlig/rpm-builder-bintray.svg?branch=master)](https://travis-ci.org/zlig/rpm-builder-bintray)
 [![License](https://img.shields.io/badge/License-LGPL%202.1-blue.svg)](https://opensource.org/licenses/LGPL-2.1)
 
