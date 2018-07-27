@@ -5,7 +5,7 @@ Summary:	__DESC__
 
 License:	__LICENSE__
 
-Requires:	python
+Requires:	bash, python
 
 %description
 __DESC__
@@ -22,8 +22,10 @@ ls -l
 
 
 %files
+%defattr(755,root,root)
 %doc
 
+/opt/zlig/hello.sh
 
 
 %changelog
