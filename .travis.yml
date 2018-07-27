@@ -26,7 +26,7 @@ before_install:
   - export RELEASE_VERSION=$TRAVIS_BUILD_NUMBER
   - export BUILD_VERSION=$SOFTWARE_VERSION.$RELEASE_VERSION
   - export BUILD_DATE=$(date "+%Y%m%d")
-  - export PACKAGE_NAME_VERSION=$PACKAGE_NAME-$SOFTWARE-VERSION-$RELEASE_VERSION.$TARGET_ARCH.rpm
+  - export PACKAGE_NAME_VERSION=$PACKAGE_NAME-$SOFTWARE_VERSION-$RELEASE_VERSION.$TARGET_ARCH.rpm
 
 script:
   # Replace version and build number with the RPM .spec file
